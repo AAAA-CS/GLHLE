@@ -1,0 +1,32 @@
+batch_size: 32
+num_devices: 1
+
+wandb: false
+project_name: noisylabel
+entity: maple_1202
+
+dataset: 'SV'  # KSC 176 13; SV 204 16; UP 103 9; Houston 144 15; Houston2018 48 20; WHU_Hi_HanChuan  274 16
+input_channel: 204
+num_classes: 16
+train_size: 20 # Total number of samples in each class
+patch_length: 9
+noise_type: 'sym' # 'sym' or 'asym'
+percent: 12 # the number of noisy samples per class
+
+n_segments: 100 # the number of segments
+k_value: 20 # the number of K-nearest samples
+
+epochs: 200
+feat_dim: 64
+learning_rate: 0.001
+learning_eta_min: 0.01
+
+temp: 0.25 # temperature
+warmup_epochs: 20
+weight_decay: 0.001
+num_workers: 0
+
+model_name: glhle
+scale1: 1
+scale2: 1
+mixup_alpha: 1.0
